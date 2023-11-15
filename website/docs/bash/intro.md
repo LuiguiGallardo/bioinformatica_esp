@@ -2,9 +2,10 @@
 sidebar_position: 1
 ---
 
-# Introducción tutorial Bash
-
+# Introducción Bash
 Este curso está diseñado con el objetivo de dar a conocer las bases de UNIX/LINUX necesarias para manipular los directorios y archivos, así como su contenido. El conocimiento que se busca adquirir es el primer paso para poder hacer uso del software y edición de archivos en el análisis de datos en linea de comandos.
+
+![Bash logo](../../static/img/bash/bash_logo.jpeg)
 
 ## Motivaciones
 Si te inscribiste a este curso, seguramente es porqué quieres empezar a analizar tus secuencias de DNA o RNA. Es muy posible que ya hayas escuchado alguna de estas palabras: “Unix”, “Linux”, “Línea de comandos” y “Terminal”. Si tu conocimiento no va mas allá de eso estás en el curso adecuado. El uso de la linea de comandos es algo que se debe conocer previo al inicio tus análisis bioinformáticos. Aunque posiblemente en los próximos años veremos un mayor surgimiento de software gráfico para resolver tareas bioinformáticas, hoy en día el uso de la terminal sigue siendo necesario y de gran utilidad.
@@ -40,3 +41,5 @@ Hoy en día tenemos diferentes “versiones” de Linux, coloquialmente se les c
 Figura 1. Algunos distros de GNU/Linux. Ubuntu probablemente es de los más conocidos. Bio-Linux (no se muestra en la imagen), es un distro que viene con algunos programas instalados que se usan en el área bioinformática.
 
 El Pingüino “Tux” es la mascota oficial del sistema Linux (Fig1). Una historia sobre su nombre es que proviene de las palabras Torval Unix. La otra se refiere a que parece usar un smoking (tuxedo en ingles), abreviado tux.
+
+![distros](../../static/img/bash/distros.png)
