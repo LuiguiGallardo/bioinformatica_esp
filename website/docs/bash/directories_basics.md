@@ -5,25 +5,23 @@ sidebar_position: 7
 # Manipulación de directorios
 
 ## Creación de directorios `mkdir`
-El comando `mkdir` cuyo significado es “make directory” nos permite crear un directorio
-
-Creamos un directorio llamado prueba:
+El comando `mkdir` cuyo significado es “make directory” nos permite crear un directorio. Por ejemplo, para poder crear un directorio llamado prueba podemos utilizar:
 
 ```bash
 mkdir prueba
 ```
 
-Creamos dos directorios al mismo tiempo:
+También funciona para dos directorios al mismo tiempo:
 
 ```bash
-mkdir secuencias genomas
+mkdir prueba_2 prueba_3
 ```
 
 ## Crear un directorio dentro de otro
 Creamos el directorio bacteria dentro del directorio genoma:
 
 ```bash
-mkdir -p genoma/bacteria
+mkdir -p prueba/secuencias
 ```
 
 ## Cambiar de directorio con `cd` 

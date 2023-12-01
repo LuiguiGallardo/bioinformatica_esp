@@ -2,16 +2,14 @@
 sidebar_position: 3
 ---
 
-# Comando `man`
+# Comandos
+Un comando representa el nombre de un programa particular, cada uno con una tarea específica. Por ejemplo, al introducir el comando `date` en la terminal, obtendremos la fecha y la hora actuales. Es crucial tener en cuenta que los comandos pueden tener opciones, las cuales se añaden precediendo al nombre del comando.
 
-Un comando es el nombre de programa, cada comando tiene un nombre y ejecuta una tarea especifica, por ejemplo, si escribimos el comando date en la terminal, este comando nos va a regresar la fecha y hora, algo importante es que los comandos tienen opciones, estás se agregan frente al nombre del comando.
-
-Cada comando tiene un manual para el usuario al que se puede acceder con el comando man:
+## `man`
+Cada comando tiene un manual para el usuario al que se puede acceder con el comando `man`. Por ejemplo:
 
 ```bash
-man ls
+man man
 ```
 
-
-Figura 3. Manual del comando ls
-
+![man](../../static/img/bash/man.png)
