@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Curso de bioinformática',
-  tagline: 'Microbiomics Lab',
+  title: 'Herramientas Bioinformáticas para el análisis de Microbiota',
+  tagline: 'Herramientas Bioinformáticas para el análisis de Microbiota',
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
@@ -66,10 +66,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/microbiomics_logo.png',
       navbar: {
-        title: 'Bioinformática en Español',
+        title: '',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.png',
+          alt: 'Microbiomics lab\'s Logo',
+          src: 'img/microbiomics_logo.png',
         },
         items: [
           // {
@@ -143,7 +143,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/LuiguiGallardo">Luigui Gallardo-Becerra<\a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/LuiguiGallardo">Luigui Gallardo-Becerra & Dr. Adrián Ochoa-Leyva. Instituto de Biotecnología, UNAM.<\a>`,
       },
       prism: {
         theme: prismThemes.github,
