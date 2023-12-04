@@ -143,7 +143,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/LuiguiGallardo">Luigui Gallardo-Becerra & Dr. Adrián Ochoa-Leyva. Instituto de Biotecnología, UNAM.<\a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/LuiguiGallardo">Luigui Gallardo-Becerra</a> & <a href="https://www.ibt.unam.mx/perfil/2856/adrian-ochoa-leyva">Dr. Adrián Ochoa-Leyva</a>. <a href="https://www.ibt.unam.mx/">Instituto de Biotecnología, UNAM.</a>`,
       },
       prism: {
         theme: prismThemes.github,

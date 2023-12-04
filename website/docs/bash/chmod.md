@@ -80,7 +80,8 @@ chmod 751 archivo
 
 ## Copiar los permisos de un archivo a otro:
 
-bash
+```bash
 chmod --reference=archivo_existente archivo_destino
+```
 
 Estos son solo ejemplos básicos y puedes ajustar los comandos según tus necesidades específicas. Recuerda que es importante comprender la estructura de los permisos (lectura, escritura, ejecución) y la notación octal para utilizar eficientemente el comando chmod.

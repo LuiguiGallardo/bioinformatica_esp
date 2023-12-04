@@ -25,7 +25,7 @@ El comando `more` es de los más antiguos y a su vez sigue siendo de los más ut
 Visualización del archivo `archivo.txt`:
 
 ```bash
-more a
+more archivo.txt
 ```
 
 ## Similitudes entre `less` y `more`.
@@ -46,12 +46,13 @@ more a
     * `?`: Iniciar búsqueda hacia atrás.
     * `n`: Ir a la siguiente coincidencia de búsqueda.
     * `N`: Ir a la coincidencia de búsqueda anterior.
+
+
 * **Salir:**
   * `h`: Salir del visor y regresar al terminal.
 
 * **Ayuda:**
-
-* `h`: Mostrar información de ayuda.
+  * `h`: Mostrar información de ayuda.
 
 Estas operaciones proporcionan la funcionalidad básica para la navegación y exploración de archivos de texto en ambos visores. Aunque `less` amplía estas operaciones ofreciendo más funciones, las mencionadas son comunes tanto en `less` como en `more`.
 
