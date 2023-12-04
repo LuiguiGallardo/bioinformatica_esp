@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Manipulación de archivos
@@ -31,12 +31,12 @@ rm ejemplo.txt
 Movemos el archivo genes.txt afuera de la carpeta
 
 ```bash
-mv ejempl.txt ../ 
+mv ejemplo.txt ../ 
 ```
 
 ## Renombrar archivos `mv`
-Cambiaremos de nombre al archivo proteínas.txt a genes.txt:
+Cambiaremos de nombre al archivo `ejemplo.txt` a `prueba.txt`:
 
 ```bash
-mv proteínas.txt genes.txt
+mv ejemplo.txt prueba.txt
 ```

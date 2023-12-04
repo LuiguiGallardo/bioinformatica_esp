@@ -1,142 +1,109 @@
 ---
-sidebar_position: 11
+sidebar_position: 12
 ---
 
-# Visualización de contenido de archivos
+# Visualización de archivos
+
+Si bien podemos visualizar los archivos con `nano`, si no deseamos editar el archivo, queremos ver una fracción del archivo o es un archivo pequeño que queremos visualizar, podemos utilizar `less`, `more` y `cat`. 
 
 ![Less, more and cat](../../static/img/bash/less_more_cat.png)
-
-## Comando `more`
-El comando `more` es de los más antiguos y a su vez sigue siendo de los más utilizados. Una de sus características notorias es que imprime el contenido del archivo leido en la pantalla de comandos.
-
-Visualización del archivo e_coli.gff:
-
-```bash
-more e_coli.gff
-```
-
-Tambien podemos vizualizar los archivos que creamos en nano y vim en el paso anterior. 
 
 ## Comando `less`
 El comando `less` está basado en su antecesor `more` pero con características adicionales. Una de las más notorias es que ejecuta una pantalla en donde se visualiza el contenido del archivo.
 
 Se utiliza comúnmente para revisar archivos con contenido extenso, ya que muestra una página a la vez, únicamente la pantalla que se muestra al usuario. Esto significa que no tiene que cargar todo el archivo antes de comenzar a mostrar su contenido. Al sallir del visualizador se limpia todo lo que `less` muestra.
 
-Visualización del archivo e_coli.gff:
+Visualización de `archivo.txt`:
 
 ```bash
-less e_coli.gff
+less archivo.txt
 ```
 
-## Similitudes entre `more` y `less`.
-Los comandos `more` y `less` son muy similares. Aunque `more` es el antecesor, ha recibido actualizaciónes y funciona de manera muy similar a `less`.
+## Comando `more`
+El comando `more` es de los más antiguos y a su vez sigue siendo de los más utilizados. Una de sus características notorias es que imprime el contenido del archivo leido en la pantalla de comandos.
 
-Mismas opciones de navegación dentro de `less` y `more`:
+Visualización del archivo `archivo.txt`:
 
-Opciones
+```bash
+more a
+```
 
-Acciones
+## Similitudes entre `less` y `more`.
+`less` y `more` comparten varias operaciones básicas y comunes en sus funcionalidades. Aquí hay algunas operaciones compartidas:
 
-flecha abajo
+* **Desplazamiento Vertical:**
+  * `Space` o` Barra espaciadora`: Avanzar una página.
+  * `Enter`: Avanzar una línea.
 
-Avanzar línea por línea
+* **Desplazamiento Vertical Inverso:**
+  * `b`: Retroceder una página (en less también puede ser utilizado para retroceder una pantalla).
 
-flecha arriba
+* **Desplazamiento Horizontal:**
+  * **Flechas arriba y Flechas abajo:** Desplazarse hacia arriba o hacia abajo línea por línea.
 
-Retroceder línea por línea
+* **Búsqueda de Texto:**
+    * `/`: Iniciar búsqueda hacia adelante.
+    * `?`: Iniciar búsqueda hacia atrás.
+    * `n`: Ir a la siguiente coincidencia de búsqueda.
+    * `N`: Ir a la coincidencia de búsqueda anterior.
+* **Salir:**
+  * `h`: Salir del visor y regresar al terminal.
 
-barra espaciadora o f
+* **Ayuda:**
 
-Avanzar por página
+* `h`: Mostrar información de ayuda.
 
-b
-
-Retroceder por página
-
-/patró
-
-Busca patrón avanzando
-
-?patrón
-
-Busca patrón retrocediendo
-
-n
-
-Repetir búsqueda anterior avanzando
-
-N
-
-Repetir búsqueda retrocediendo
-
-g
-
-Ir a la primera línea
-
-Ng
-
-Ir a un número de línea ej. 100g va a la línea 100
-
-G
-
- Ir a la última línea
-
-h
-
-Muestra ayuda
-
-q
-
-salir de la visualización
+Estas operaciones proporcionan la funcionalidad básica para la navegación y exploración de archivos de texto en ambos visores. Aunque `less` amplía estas operaciones ofreciendo más funciones, las mencionadas son comunes tanto en `less` como en `more`.
 
 ## Comando `cat`
-El comando `cat` es utilizado para leer archivos de forma concatenada, esto quiere decir, que muestra varios archivos al mismo tiempo, uno tras otro. Esta característica puede ser de utilidad cuando se quiere comparar el contenido de archivos cortos. Es un visualizador que imprime todo el contenido de uno o varios archivos a la vez en la pantalla.
+Al igual que los comandos ya mencionados, si se desea ver una fracción o la totalidad de un archivo podemos utilizar `cat`, `head` y `tail`. El comando `cat` es utilizado para leer archivos de forma concatenada, esto quiere decir, que muestra varios archivos al mismo tiempo, uno tras otro. Esta característica puede ser de utilidad cuando se quiere comparar el contenido de archivos cortos. Es un visualizador que imprime todo el contenido de uno o varios archivos a la vez en la pantalla.
 
-Imprimir en pantalla TODO EL CONTENIDO del archivo:
+Imprimir en pantalla todo el contenido del archivo:
 
 ```bash
-cat secuencia1.fa
+cat archivo.txt
 ```
 
-Imprimir TODO EL CONTENIDO de los tres archivos en el orden que se mencionan:
+Imprimir todo el contenido de los tres archivos en el orden que se mencionan:
 
 ```bash
-cat secuencia1.fa secuencia2.fa secuencia3.fa 
+cat archivo1.txt archivo2.txt archivo3.txt 
 ```
 
 No es recomendable utilizarlo con archivos extensos, ya que imprime en pantalla todo su contenido hasta su fin, y no permite su navegación.
 
 ## Comando `head`
-Imprime las primeras lineas del contenido del archivo. Por defecto imprime 10 líneas, pero puede modificarse el número con la opción -n [número].
 
-Impresión de las primeras lineas (10 por defecto):
+Los comandos `head` y `tail` nos permiten visualizar respectivamente el inicio y el final del contenido de un archivo, de manera análoga a la cabeza y la cola de un pingüino.
+
+![Head and tail](../../static/img/bash/head_tail.png)
+
+`head` imprime las primeras lineas del contenido del archivo. Por defecto imprime 10 líneas, pero puede modificarse el número con la opción `-n`.
+
+Para imprimir las primeras lineas (10 por defecto):
 
 ```bash
-head secuencia1.fa
+head archivo1.txt
 ```
 
-Impresión de las primeras 5 líneas:
+Para imprimir solo las primeras 5 líneas:
 
 ```bash
-head -n 5 secuencia1.fa   
+head -n 5 archivo1.txt   
 ```
 
 ## Comando `tail`
 
-Imprime las últimas lineas del contenido del archivo. Por defecto imprime 10 líneas, pero puede modificarse el número con la opción -n [número].
+Imprime las últimas lineas del contenido del archivo. Por defecto imprime 10 líneas, pero puede modificarse el número con la opción `-n`.
 
-Impresión de las últimas lineas (10 por defecto):
-
-```bash
-tail m_mycoides_16s.fa
-```
-
-Impresión de las ultimas 3 líneas:
+Para imprimir últimas lineas (10 por defecto):
 
 ```bash
-tail -n 3 m_mycoides_16s.fa  
+tail archivo.txt
 ```
 
-Los comandos `head` y `tail` muestran el inicio y final del contenido de un archivo como la cabeza y cola de un pingüino.
+Ahora considerando las ultimas 3 líneas:
 
-![Head and tail](../../static/img/bash/head_tail.png)
+```bash
+tail -n 3 archivo.txt  
+```

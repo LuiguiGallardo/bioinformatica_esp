@@ -1,37 +1,42 @@
 ---
-sidebar_position: 17
+sidebar_position: 18
 ---
 
 # Creación de un script
+Un script se define como un conjunto de instrucciones en código de programación. Este código contiene una secuencia de comandos u órdenes que se ejecutan de manera secuencial, y generalmente se utilizan para dirigir un flujo de trabajo o controlar el comportamiento de programas. Durante la ejecución, los comandos dentro del script son interpretados por un intérprete, el cual se encarga de ejecutar las instrucciones. En el entorno Unix, estos scripts suelen llevar la extensión `.sh`.
 
-Un script puede definirse como un código de programación, el cual contiene una serie de comandos u ordenes que se ejecutan de manera secuencial y estos suelen utilizarse para controlar un flujo de trabajo o el comportamiento de programas. Al momento de ejecutarse los comandos contenidos dentro del script son “leídos” por un interprete y este ejecuta los comandos. En Unix los podemos encontrar con la extensión .sh.
-
-Hagamos nuestro primer script:
+Estos son los pasos para crear tu primer script:
+1. **Abre tu editor de texto favorito.** Puedes usar `nano`, `vim`, `gedit` o cualquier otro que prefieras. Por ejemplo, para usar `nano`, escribe en tu terminal:
 
 ```bash
-Crearemos en vim un script que nos haga un directorio llamado ribosomals, nos mueva dentro de ese directorio y copie un archivo que contiene secuencias de proteinas en el (el archivo se localiza un directorio arriba), seguido de esto vamos a extraer las proteinas ribosomales empleando grep y generaremos un nuevo archivo, contaremos cuantas proteinas ribosomales hay en ese nuevo archivo y el resultado se imprimirá en pantalla.
-
-rafabust$ vim cuentas.sh  #Estamos creando un nuevo documento que se llamará cuentas.sh, al darle enter veremos que este se encuentra vacio.
-Dentro de vim escribiremos lo siguiente:
-#!/bin/bash #Esta línea indica el interprete que se usara para leer el script, es necesario pornerla para saber que esta escrito en bash.
-
-echo "Mi primer script"   #Esta linea nos imprimirá en pantalla lo que está entre comillas.
-
-mkdir ribosomals  #Creamos el directorio ribosomals.
-
-cd ribosomals   #Nos movemos dentro de ribosomals.
-
-cp ../GCF_002284945.1_ASM228494v1_protein.faa .   #Copiamos el archivo multifasta de proteinas que se encuentra un directorio arriba.
-
-grep "ribosomal protein" GCF_002284945.1_ASM228494v1_protein.faa > solo_pr.txt    #Extraemos la información que deseamos y creamos un nuevo documento.
-
-echo "Tenemos un total de $(grep -chi ">" solo_pr.txt) proteinas ribosomales"   #Con esta linea nosotros sabremos cuantas proteinas ribosomales tenemos en nuestro archivo.
-
-Al terminar de escribir los comandos salimos de vim guardando los cambios realizados. Oprimiendo la tecla esc para regresar a el modo comandos y tecleando la opción :wq para que guarde los cambios
-
-rafabust$ chmod +x cuentas.sh   #Volvemos ejecutabe el archivo.
-rafabust$ ./cuentas.sh ó sh cuentas.sh    #Podemos ocupar cualquier de las dos opciones para ejecutar el script.
-rafabust$ sh cuentas.sh
-Mi primer script
-Tenemos un total de 58 proteinas ribosomales  #Listo! acabamos de ejecutar nuestro primer script!!
+nano saludo.sh
 ```
+
+3. **Escribe el siguiente código en el archivo:**
+```bash
+#!/bin/bash
+# Este es un script simple que saluda al usuario.
+echo "¡Hola, bienvenido a mi script de saludo!"
+echo "¿Cuál es tu nombre?"
+read nombre
+echo "¡Hola, $nombre!"
+```
+
+Este script utiliza `echo` para imprimir mensajes y `read` para obtener la entrada del usuario.
+
+4. **Guarda y cierra el archivo.**
+  En `nano`, presiona `Ctrl + X`, luego `Y` para confirmar que deseas guardar y, finalmente, `Enter` para salir.
+
+5. **Haz el script ejecutable.**
+```bash
+chmod +x saludo.sh
+```
+
+6. **Ejecuta el script:**
+```bash
+./saludo.sh
+```
+
+El script solicitará tu nombre y te dará la bienvenida personalizada.
+
+Este es un ejemplo básico, pero los scripts de Bash pueden incluir lógica más compleja, variables, bucles y condicionales.

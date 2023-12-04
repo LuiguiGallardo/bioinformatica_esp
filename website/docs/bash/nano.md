@@ -1,26 +1,32 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 ---
 
-# Visualización y edición de contenido de archivos con `nano`
+# Editor de texto `nano`
 
-Vamos a empezar con dos programas para la creción y edición de archivos. Para esto es importante saber que los archivos y editores de texto a utilizar deben ser de texto plano, los archivos no deben de ser creados y/o editados en Word o cualquier otro programa similar ya que estos hacen uso de carácteres especiales que nosotros no vemos, pero estos quedan guardados dentro del texto y por lo tanto no nos serán de utilidad.
+Nano es un editor de texto en modo de terminal, diseñado para ser simple y fácil de usar, especialmente para usuarios novatos o aquellos que prefieren una interfaz más intuitiva. Algunas características clave de Nano incluyen:
 
-El primer programa a revisar es nano (GNU nano), este es un editor de textos que forma parte de la GNU General Public License el cual fue desarrollado por Chris Allegretta bajo el nombre de TIP y posteriormente pasó a llamarse nano. En este programa nosotros podemos crear y editar archivos de texto plano.
+* **Interfaz Amigable:** Nano presenta una interfaz de usuario simple y amigable, con comandos básicos que se muestran en la parte inferior de la pantalla para facilitar su uso.
 
-Para abrirlo basta con teclear nano y nos va a dirigiar al editor de textos (Figura 6)
+* **Atajos de Teclado Intuitivos:** Utiliza atajos de teclado comunes, como Ctrl + O para guardar y Ctrl + X para salir, lo que facilita la navegación y la ejecución de acciones.
 
+* **Resaltado de Sintaxis:** Proporciona resaltado de sintaxis básico para diversos lenguajes de programación, lo que mejora la legibilidad del código.
 
+* **Funciones Básicas de Edición:** Ofrece funciones esenciales de edición de texto, como copiar, pegar, cortar, buscar y reemplazar.
 
-Figura 6. Pantalla principal de nano
+* **No Requiere Modo de Comandos:** A diferencia de algunos editores de texto en modo de terminal, Nano no requiere que ingreses a un "modo de comandos" separado para realizar acciones de edición.
+
+* **Tamaño de Archivo Pequeño:** Nano tiene un tamaño de archivo relativamente pequeño, lo que lo hace rápido de cargar y utilizar en sistemas con recursos limitados.
+
+![nano](../../static/img/bash/nano.png)
 
 En la pantalla de nano nosotros podemos escribir lo que deseemos. Algunos de los comandos que se utilizan dentro del editor son:
 
-* Ctrl+G: Nos imprime la ayuda del programa.
-* Ctrl+O: Guarda los cambios realizados.
-* Ctrl+X: Salir del programa.
-* Alt+U: Deshacer las últimas modificaciones hechas.
+* **Ctrl+G:** Nos imprime la ayuda del programa.
+* **Ctrl+O:** Guarda los cambios realizados.
+* **Ctrl+X:** Salir del programa.
+* **Alt+U:** Deshacer las últimas modificaciones hechas.
 
 **Ejercicio:**
 
-Abrir nano, escribir `Mi primer linea en texto plano` y guardar el texto (`Ctrl + O`), te pedira un nombre, escribelo y posteriormente da enter. Ahora cierra nano (`Ctrl + X`). Felicidades creaste tu primer archivo con contenido
+Abrir nano, escribir `Mi primer linea en texto plano` y guardar el texto (`Ctrl + O`), te pedira un nombre, escribelo y posteriormente da enter. Ahora cierra nano (`Ctrl + X`).

@@ -1,95 +1,63 @@
 ---
-sidebar_position: 16
+sidebar_position: 17
 ---
 
 # Redirección de salida y tuberías
 
-## Salida estándar (STDOUT)
-Empezaremos definiendo la salida estandar (STDOUT), al ejecutar un comando el resultado por default se va a mostrar en la consola de la terminar, es decir, nuestra pantalla del ordenador.
+## Redirección de Salidas
 
-La salida del comando ls representa una salida estandar
+La redirección de salidas en la terminal de Unix y Linux permite dirigir la salida estándar (stdout) y la salida de errores (stderr) de un comando a un archivo o a otro destino, en lugar de imprimirlo en la pantalla.
 
+### Redirigir la salida estándar a un archivo
 ```bash
-ls -l
+comando > archivo_salida.txt
 ```
+Este comando ejecuta `comando` y guarda su salida estándar en el archivo `archivo_salida.txt`. Si el archivo ya existe, se sobrescribe; si no, se crea.
 
-Siempre que se ejecute un comando veremos el resultado en nuestra pantalla, sin embargo nosotros podemos redirigir esta salida y enviarla a un archivo o documento, para esto ocuparemos el símbolo de mayor que `>`, al hacer esto nosotros estaremos creando un nuevo documento con la información de salida del comando que ejecutemos.
-
-Crear un archivo que contenga el resultado del comando `ls -l` y que se llame listado.txt
-
+### Añadir la salida estándar a un archivo (sin sobrescribir)
 ```bash
-ls -l > listado.txt
+comando >> archivo_salida.txt
 ```
+Similar al ejemplo anterior, pero añade la salida al final del archivo en lugar de sobrescribirlo.
 
-El archivo que nosotros creamos contiene el resultado del comando ls -l.
-
-Si nosotros deseamos adicionar contenido a un archivo existente lo podemos hacer empleando `>>`, veamos un ejemplo:
-
+### Redirigir la salida de errores a un archivos
 ```bash
-# Crearemos dos archios en vim, uno llamado numeros.txt que contenga lo siguiente:
-1
-2
-3
-4
-5
-6
-
-#Y otro archivo llamado faltantes.txt que contenga lo siguiente:
-7
-8
-9
-10
-11
-
-# Posteriormente añadiremos al archivo numeros.txt los numeros que contiene el archivo faltantes.txt. Al ocupar >> estamos indicando que la informacion de
-
-more faltantes.txt >> numeros.txt  faltantes.txt 
-
-#Ahora al abrir el archivo numeros.txt este contiene tambien los numeros que se encontraban en el archivo faltantes.txt.
-
-more numeros.txt 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+comando 2> archivo_errores.txt
 ```
+Este comando guarda los mensajes de error (stderr) generados por `comando` en el archivo `archivo_errores.txt`.
 
-## Tuberías (pipes)
-
-El uso de pipes o tuberias es muy común cuando se trabaja en Unix, estas nos sirven para encadenar una serie de comandos para llegar a un resultado en un “sólo paso”, es decir, en lugar de teclear todos los comandos por separado, estos se pueden encadenar y hacerlo en “un solo comando” para esto nosotros utilizamos el síbolo “|”. Veamos un ejemplo:
-
+### Redirigir ambas salidas (stdout y stderr) a un archivo
 ```bash
-# Tenemos un archivo multifasta que contiene secuencias de proteínas, de este archivo  queremos extraer las proteínas ribosomales y después saber cuantas tenemos. Empecemos haciendolo por partes y seguido de esto empleando el uso de tuberias.
-
-
-# Empecemos por extraer las proteinas ribosomales que contiene el archivo empleando grep y creando un archivo nuevo que llamaremos ribosomales.txt
-
-grep "ribosomal protein" GCF_002284945.1_ASM228494v1_protein > ribosomales.txt 
-.faa
-
-more ribosomales.txt 
-
->WP_018604832.1 50S ribosomal protein L34 [Uliginosibacterium gangwonense]
->WP_095523304.1 50S ribosomal protein L3 N(5)-glutamine methyltransferase [Candidatus Dactylopiibacterium carminicum]
->WP_095523490.1 30S ribosomal protein S21 [Candidatus Dactylopiibacterium carminicum]
->WP_095524063.1 50S ribosomal protein L28 [Candidatus Dactylopiibacterium carminicum]
->WP_095524064.1 50S ribosomal protein L33 [Candidatus Dactylopiibacterium carminicum]
->WP_095524081.1 50S ribosomal protein L9 [Candidatus Dactylopiibacterium carminicum]
-
-# Posteriormente con el comando wc contamos cuantas proteinas ribosomales hay.
-wc -l ribosomales.txt   
-58 ribosomales.txt
-
-# Ahora hagamoslo todo en un sólo paso: Encadenamos el resultado del grep al siguiente comando que es wc, con esto extraemos y contamos en una sola operación.
-
-grep "ribosomal protein " GCF_002284945.1_ASM228494v1_protein.faa | wc -l
-
-58
+comando > archivo_todas_las_salidas.txt 2>&1
 ```
+Este comando redirige tanto la salida estándar como la salida de errores al mismo archivo.
+
+## Uso de Tuberías (Pipes)
+
+Las tuberías (`|`) permiten conectar la salida de un comando directamente como entrada a otro. Esto es útil para combinar múltiples comandos en una única línea. Aquí hay algunos ejemplos:
+
+### Usar una tubería para pasar la salida de un comando como entrada a otro
+```bash
+comando1 | comando2
+```
+La salida de `comando1` se utiliza como entrada para `comando2`.
+
+### Contar las líneas de un archivo con `wc`
+```bash
+cat archivo.txt | wc -l
+```
+`cat` muestra el contenido del archivo, y `wc -l` cuenta las líneas.
+
+### Filtrar resultados con `grep` y `sort`
+```bash
+comando | grep "patrón" | sort
+```
+La salida de `comando` se filtra con `grep` y luego se ordena con `sort`.
+
+### Mostrar procesos con `ps` y buscar un proceso específico con `grep`
+```bash
+ps aux | grep "nombre_del_proceso"
+```
+`ps aux` muestra información sobre todos los procesos, y `grep` filtra las líneas que contienen el nombre del proceso deseado.
+
+La combinación de redirección y tuberías proporciona una potente capacidad para manipular y procesar datos en la línea de comandos de Unix y Linux.

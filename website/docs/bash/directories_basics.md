@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
 
 # Manipulación de directorios
@@ -18,22 +18,22 @@ mkdir prueba_2 prueba_3
 ```
 
 ## Crear un directorio dentro de otro
-Creamos el directorio bacteria dentro del directorio genoma:
+Creamos el directorio `temporal` dentro del directorio genoma:
 
 ```bash
-mkdir -p prueba/secuencias
+mkdir -p prueba/temporal
 ```
 
 ## Cambiar de directorio con `cd` 
 Para acceder a un directorio utilizamos el comando cd seguido del nombre del directorio. Para salir de un directorio utilizamos `cd ..` lo que nos lleva al directorio anterior
 
-Entramos al directorio `genoma`
+Entramos al directorio `prueba`
 
 ```bash
-cd genoma/
+cd prueba/
 ```
 
-Si estamos dentro de `genoma`, lo siguiente nos llevará un directorio atrás.
+Si estamos dentro de `prueba`, lo siguiente nos llevará un directorio atrás.
 
 ```bash
 cd ..
@@ -42,28 +42,34 @@ cd ..
 También podemos movernos de un directorio a otro usando la ruta absoluta o relativa:
 
 ```bash
+# Con ruta absoluta
 cd /mnt/luigui
+
+# Con ruta relativa
+cd ../
+cd luigui/
 ```
 
 ## Copiar directorios `cp -r`
-Al tratarse de un directorio agregamos el argumento -r:
+Al tratarse de un directorio agregamos el argumento `-r`:
 
 ```bash
-cp -r <directorio destino>
+# cp -r <directorio> <destino>
+cp -r luigui Desktop/
 ```
 
 ## Borrar directorios `rm -r`
-Borramos el directorio bacteria:
+Al igual que con archivos, para borrar un directorio podemos utilizar el comando `rm` agregando `-r` para indicar que es un directorio. Por ejemplo, podemos borrar el archivo Borramos el directorio `temporal`:
 
 ```bash
-rm -r bacteria
+rm -r temporal
 ```
 
 ## Mover directorios `mv`
 Renombrar el directorio genoma a genomas:
 
 ```bash
-mv genoma genomas
+mv prueba final 
 ```
 
 ## Listar contenido de un directorio `ls`
