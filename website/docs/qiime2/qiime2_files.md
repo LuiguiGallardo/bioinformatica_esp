@@ -53,6 +53,17 @@ cat rawdata/manifest.tsv
 
 Ahora si tenemos todos los datos de entrada para comenzar con el *pipeline*.
 
+## Visualizar calidad de los archivos
+Una de las herramientas más utilizadas para visualizar la calidad de los archivos `fastq` es `fastqc`. Para usar este comando en nuestros datos podemos utilizar los siguientes comandos:
+
+```bash
+# Para crear el directorio donde depositar los resultados
+mkdir results/00_fastqc
+
+# Para correr fastqc en todos nuestros archivos
+for s in rawdata/*gz ; do fastqc $s -o results/00_fastqc ; done
+```
+
 ## Importar los datos
 Para importar los datos utiliza los siguientes comandos:
 
