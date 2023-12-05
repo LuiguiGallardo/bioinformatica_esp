@@ -5,7 +5,7 @@ sidebar_position: 4
 # Documentos iniciales
 
 ## Datos crudos
-Crea una liga simbólica (`ln -s`) a los datos y copia (`cp`).
+Crea una liga simbólica (`ln -s`) a los datos crudos, `metadata.tsv` y `manifest.csv`.
 
 ```bash
 ln -s /home/luigui/rawdata . 
@@ -57,7 +57,7 @@ Ahora si tenemos todos los datos de entrada para comenzar con el *pipeline*.
 Para importar los datos utiliza los siguientes comandos:
 
 ```bash
-mkidr results
+mkdir results
 
 qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-format 'PairedEndFastqManifestPhred33' --input-path rawdata/manifest.csv  --output-path results/01_demux.qza 
 ```

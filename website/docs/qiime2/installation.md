@@ -23,10 +23,10 @@ sidebar_position: 3
 2. **Instalar QIIME 2:**
    - Utiliza el siguiente comando para instalar QIIME 2 en el entorno virtual que creaste.
 
-     ```bash
+    ```bash
     wget https://data.qiime2.org/distro/amplicon/qiime2-amplicon-2023.9-py38-linux-conda.yml
-    conda env create -n sabana --file qiime2-amplicon-2023.9-py38-linux-conda.yml
-     ```
+    conda env create -n qiime2-2023.9 --file qiime2-amplicon-2023.9-py38-linux-conda.yml
+    ```
 
    - Esto instalará la versión específica de QIIME 2 (2023.9) junto con las dependencias necesarias.
 
@@ -34,7 +34,7 @@ sidebar_position: 3
    - Después de la instalación, activa el entorno QIIME 2.
 
      ```bash
-     conda activate sabana
+     conda activate qiime2-2023.9
      ```
 
 4. **Verificar la instalación:**
