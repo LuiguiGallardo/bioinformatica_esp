@@ -2,39 +2,48 @@
 sidebar_position: 3
 ---
 
-# Instalar QIIME 2
+# Instalación de QIIME 2
 
-QIIME2 se puede correr en un ambiente Conda, las instrucciones de instalación para cada sistema operativo las puedes encontrar aquí.
+**Requisitos previos:**
+- Linux o macOS (QIIME 2 no es compatible con Windows, pero puedes usar una máquina virtual o un entorno basado en contenedores como Docker).
+- Python 3.6 o superior.
 
-## Entrar al servidor
-Para el servidor en el que trabajamos, se instaló con las siguientes lineas:
+**Pasos generales para la instalación:**
 
-```bash
-wget https://data.qiime2.org/distro/core/qiime2-2022.11-py38-linux-conda.yml
-conda env create -n qiime2-2022.11 --file qiime2-2022.11-py38-linux-conda.yml
-```
+1. **Crear un entorno virtual (opcional pero recomendado):**
+   - Crea un entorno virtual para QIIME 2 utilizando `conda`. Puedes instalar `conda` desde [Anaconda](https://www.anaconda.com/products/individual) o [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
-## Inicia conda
-**NOTA:** Iniciar conda sólo se hace una vez.
+     ```bash
+     conda create -n qiime2-2023.9 python=3.10
+     conda activate qiime2-2023.9
+     ```
 
-```bash
-/opt/anaconda3/bin/conda init bash
-```
+   - Ten en cuenta que "2023.9" es la versión específica de QIIME 2. Puedes verificar la versión más reciente en la [página de instalación de QIIME 2](https://docs.qiime2.org/2023.9/install/).
 
-- Sal del servidor
-- Vuelve a entrar y entra a tu espacio en `/botete/usuario`
+2. **Instalar QIIME 2:**
+   - Utiliza el siguiente comando para instalar QIIME 2 en el entorno virtual que creaste.
 
-## Activar el ambiente de QIIME2
+     ```bash
+    wget https://data.qiime2.org/distro/amplicon/qiime2-amplicon-2023.9-py38-linux-conda.yml
+    conda env create -n sabana --file qiime2-amplicon-2023.9-py38-linux-conda.yml
+     ```
 
-**NOTA** Este paso si se hace cada vez que entres al servidor y trabajes con QIIME2
+   - Esto instalará la versión específica de QIIME 2 (2023.9) junto con las dependencias necesarias.
 
-```bash
-conda activate /botete/diana/.conda/envs/qiime2-2022.11
-```
-### 0.3 Crear directorios de trabajo
-- [ ] Vamos a crear el directorio y espacio de trabajo
+3. **Activar QIIME 2:**
+   - Después de la instalación, activa el entorno QIIME 2.
 
-```bash
-mkdir -p 02.Amplicones_16S_Qiime2/{data,src,results}
-cd 02.Amplicones_16S_Qiime2/
-```
+     ```bash
+     conda activate sabana
+     ```
+
+4. **Verificar la instalación:**
+   - Puedes verificar que QIIME 2 está instalado correctamente ejecutando el siguiente comando:
+
+     ```bash
+     qiime --help
+     ```
+
+   - Esto debería mostrar la ayuda de QIIME 2.
+
+Recuerda que estos pasos están basados en la información disponible hasta la última actualización disponible al 1 de Diciembre del 2023. Te recomiendo consultar la [documentación oficial de QIIME 2](https://docs.qiime2.org/2023.9/install/) para obtener la información más reciente sobre la instalación.

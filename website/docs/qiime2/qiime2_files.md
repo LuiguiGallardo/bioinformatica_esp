@@ -2,43 +2,68 @@
 sidebar_position: 4
 ---
 
-# Descarga de documentos
+# Documentos iniciales
 
-- [ ] Crea una liga simbólica a los datos, copia el archivo de metadata y los scripts.
-
-```bash
-# Liga simbólica
-ln -s /botete/diana/Hackeando_las_comunidades_microbianas_v1/02.Amplicones_16S_Qiime2/data/*.gz data/
-# copiar el metadata
-cp /botete/diana/Hackeando_las_comunidades_microbianas_v1/02.Amplicones_16S_Qiime2/data/metadata.tsv data/
-# copiar los scripts
-cp /botete/diana/Hackeando_las_comunidades_microbianas_v1/02.Amplicones_16S_Qiime2/src/* src/
-# Copiar la base de datos
-cp /botete/diana/Hackeando_las_comunidades_microbianas_v1/02.Amplicones_16S_Qiime2/data/*.qza data/
-
-```
-## Crear el archivo manifest
-
-Ya que copiaste los archivos necesarios, lista el contenido de tus directorio `data` , veamos que contiene el archivo `metadata.tsv`
-
-Recordemos que Qiime2 requiere de un archivo `manifest` que contenga la ubicación e información de los archivos `fastq`. Así que ejecuta el `script 02` para crear tu archivo manifest:
+## Datos crudos
+Crea una liga simbólica (`ln -s`) a los datos y copia (`cp`).
 
 ```bash
-bash src/02.create_manifest.sh
+ln -s /home/luigui/rawdata . 
 ```
 
-- [ ] Observa que contiene el archivo `manifest.csv`
+Ya que copiaste los archivos necesarios, lista el contenido de tus directorio `rawdata` .
+
+## Metadata
+Veamos que contiene el archivo `metadata.tsv`
+
+```bash
+cat rawdata/metadata.tsv
+```
+
+| sample-id | group      |
+| --------- | ---------- |
+| sample_1  | probiotics |
+| sample_2  | probiotics |
+| sample_3  | probiotics |
+| sample_4  | control    |
+| sample_5  | control    |
+| sample_6  | control    |
+
+## Archivo `manifest`
+Qiime2 requiere de un archivo `manifest` que contenga la ubicación e información de los archivos `fastq`. Para visualizar el archivo `manifest` utiliza la siguiente línea de comando:
+
+```bash
+cat rawdata/manifest.tsv
+```
+
+| sample-id | absolute-filepath                         | direction |
+| --------- | ----------------------------------------- | --------- |
+| sample_1  | /home/luigui/rawdata/sample_1_R1.fastq.gz | forward   |
+| sample_1  | /home/luigui/rawdata/sample_1_R2.fastq.gz | reverse   |
+| sample_2  | /home/luigui/rawdata/sample_2_R1.fastq.gz | forward   |
+| sample_2  | /home/luigui/rawdata/sample_2_R2.fastq.gz | reverse   |
+| sample_3  | /home/luigui/rawdata/sample_3_R1.fastq.gz | forward   |
+| sample_3  | /home/luigui/rawdata/sample_3_R2.fastq.gz | reverse   |
+| sample_4  | /home/luigui/rawdata/sample_4_R1.fastq.gz | forward   |
+| sample_4  | /home/luigui/rawdata/sample_4_R2.fastq.gz | reverse   |
+| sample_5  | /home/luigui/rawdata/sample_5_R1.fastq.gz | forward   |
+| sample_5  | /home/luigui/rawdata/sample_5_R2.fastq.gz | reverse   |
+| sample_6  | /home/luigui/rawdata/sample_6_R1.fastq.gz | forward   |
+| sample_6  | /home/luigui/rawdata/sample_6_R2.fastq.gz | reverse   |
 
 Ahora si tenemos todos los datos de entrada para comenzar con el *pipeline*.
 
 ## Importar los datos
-
-   Observa el contenido de `03.import_data.sh` y ve a la ayuda de qiime para conocer cada uno de los *plugins* que estamos poniendo. 
-
-   Para conocer más el tipo de datos que se pueden importar, puedes visitar [esta página.](https://docs.qiime2.org/2023.7/tutorials/importing/)
+Para importar los datos utiliza los siguientes comandos:
 
 ```bash
-bash src/03.import_data.sh
+mkidr results
+
+qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-format 'PairedEndFastqManifestPhred33' --input-path rawdata/manifest.csv  --output-path results/01_demux.qza 
 ```
 
-- [ ] Veamos como se ven las secuencias que estamos analizando. Puedes descargar el archivo `results/01.demux.qzv` que acabas de generar o puedes descargarlo desde este repositorio y verlo en [QIIME2view](https://view.qiime2.org/).
+Veamos como se ven las secuencias que estamos analizando. Puedes descargar el archivo `results/01.demux.qzv` que acabas de generar o puedes descargarlo desde este repositorio y verlo en [QIIME2view](https://view.qiime2.org/).
+
+:::info
+Recuerda que cada comando tiene parámetros que hay que ajustar al set de datos en cuestión. Para conocer más el tipo de datos que se pueden importar, puedes visitar [esta página.](https://docs.qiime2.org/2023.7/tutorials/importing/)
+:::
