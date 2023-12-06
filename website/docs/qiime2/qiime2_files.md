@@ -58,7 +58,7 @@ Una de las herramientas más utilizadas para visualizar la calidad de los archiv
 
 ```bash
 # Para crear el directorio donde depositar los resultados
-mkdir results/00_fastqc
+mkdir results results/00_fastqc
 
 # Para correr fastqc en todos nuestros archivos
 for s in rawdata/*gz ; do fastqc $s -o results/00_fastqc ; done
