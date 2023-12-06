@@ -33,7 +33,7 @@ cat rawdata/metadata.tsv
 Qiime2 requiere de un archivo `manifest` que contenga la ubicación e información de los archivos `fastq`. Para visualizar el archivo `manifest` utiliza la siguiente línea de comando:
 
 ```bash
-cat rawdata/manifest.tsv
+cat rawdata/manifest.csv
 ```
 
 | sample-id | absolute-filepath                         | direction |
