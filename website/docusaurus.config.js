@@ -98,6 +98,13 @@ const config = {
           //   label: 'GitHub',
           //   position: 'right',
           // },
+          {
+            // type: 'docSidebar',
+            // sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Evaluación',
+            to: '/docs/evaluacion/',
+          },
         ],
       },
       footer: {
