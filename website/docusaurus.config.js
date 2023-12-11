@@ -105,6 +105,13 @@ const config = {
             label: 'Evaluación',
             to: '/docs/evaluacion/',
           },
+          {
+            // type: 'docSidebar',
+            // sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Artículos y Presentaciones',
+            to: '/docs/extra_data/',
+          },
         ],
       },
       footer: {
