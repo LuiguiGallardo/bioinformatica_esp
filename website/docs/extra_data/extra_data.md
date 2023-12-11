@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Extras
 ## Artículos
-<a href="https://github.com/LuiguiGallardo/bioinformatica_esp/blob/main/website/static/extras/CLASE_2_COLOMBIA_2023.pptx">Phages rarely encode antibiotic resistance genes: a cautionary tale for virome analyses</a>
+<a href="https://www.nature.com/articles/ismej201690">Phages rarely encode antibiotic resistance genes: a cautionary tale for virome analyses</a>
 <br></br>
 
 ## Presentaciones
@@ -14,7 +14,6 @@ sidebar_position: 1
 <br></br>
 
 ## Cursos de bioinformática en la UNAM
-https://www.nnb.unam.mx/
+Nodo Nacional de Bioinformatica, UNAM: https://www.nnb.unam.mx/
 
-
-http://www.uusmb.unam.mx/
+Unidad Universitaria de Secuenciación Masiva y Bioinformática: http://www.uusmb.unam.mx/
